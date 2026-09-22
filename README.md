@@ -57,7 +57,19 @@ Input new file `playbook.yaml` with content:
         state: touch
 ```
 
-## Step 10 -- Run the agent
+## Step 11 -- Stop cf-execd
+
+```
+sudo systemctl stop cf-execd
+```
+
+## Step 12 -- Deploy Build project
+
+```
+sudo find /var/cfengine/masterfiles -name playbook.yaml
+```
+
+## Step 13 -- Run the agent
 
 ```
 sudo cf-agent -KIf update.cf && sudo cf-agent -KI
